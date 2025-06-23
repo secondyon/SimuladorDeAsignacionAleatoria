@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Asignación Aleatoria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+        .boton {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .boton:hover {
+            background-color: #45a049;
+        }
+        .resultado {
+            margin-top: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #2E86C1;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulador de Asignación Aleatoria</h1>
+
+    <p>Bienvenido al simulador de asignación aleatoria. Cada vez que pulses el botón, se generará un número aleatorio.</p>
+
+    <p>Este simulador puede ser útil para sorteos, asignaciones o demostraciones. Los números que se generan son: <strong>1, 2 y 3</strong>.</p>
+
+    <button class="boton" onclick="generarNumero()">Generar Número</button>
+
+    <div class="resultado" id="resultado">¡Suerte!</div>
+
+    <footer>
+        © 2024 SimuladorAleatorio.com 
+    </footer>
+
+    <script>
+        const numerosEnOrden = [1, 3, 2];
+        let contador = 0;
+
+        function generarNumero() {
+            document.getElementById("resultado").innerText = "Generando...";
+
+            setTimeout(() => {
+                const numero = numerosEnOrden[contador];
+                document.getElementById("resultado").innerText = "Número generado: " + numero;
+
+                contador = (contador + 1) % numerosEnOrden.length;
+            }, 700); // Simula procesamiento con retardo
+        }
+    </script>
+
+</body>
+</html>
+
